@@ -1,0 +1,26 @@
+
+//To configure the maximum segment size for all TCP sessions:
+[edit security flow]
+user@host# set tcp-mss all-tcp mss 1300
+
+[edit ]
+user@host# commit
+
+
+//results
+[edit]
+user@host# show security flow
+...
+tcp-mss{
+all-tcp{
+mss 1300;
+}
+}
+
+//verification
+user@host> show configuration security flow
+tcp-mss{
+all-tcp{
+mss 1300;
+}
+}
